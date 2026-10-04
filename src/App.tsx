@@ -5,6 +5,7 @@ import { WordlistGeneratorView } from './components/WordlistGeneratorView';
 import { TypingSimulatorView } from './components/TypingSimulatorView';
 import { LetterAnalyticsView } from './components/LetterAnalyticsView';
 import { AiAssistantView } from './components/AiAssistantView';
+import { ChatbotView } from './components/ChatbotView';
 import {
   DEFAULT_NORMALIZATION_OPTIONS,
   SAMPLE_TEXTS,
@@ -100,6 +101,13 @@ export default function App() {
           <LetterAnalyticsView
             letterFrequencies={letterFrequencies}
             stats={stats}
+          />
+        )}
+
+        {activeTab === 'chat' && (
+          <ChatbotView
+            onStartTypingWithWordlist={handleStartTypingWithWordlist}
+            onApplyTextToAnalyzer={handleApplyTextToAnalyzer}
           />
         )}
 

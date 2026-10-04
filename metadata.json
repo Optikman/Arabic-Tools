@@ -2,5 +2,7 @@
   "name": "Arabic Text Analyzer & 10FastFingers Studio",
   "description": "Analyze Arabic texts, calculate word and letter frequencies, and curate clean diacritic-free Arabic wordlists for typing speed tests with live simulator and AI assistance.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

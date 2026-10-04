@@ -1,7 +1,7 @@
 import React from 'react';
 import { Play, Sparkles, FileText, ListFilter, BarChart3, Keyboard } from 'lucide-react';
 
-export type ActiveTab = 'analyzer' | 'wordlists' | 'typing' | 'letters' | 'ai';
+export type ActiveTab = 'analyzer' | 'wordlists' | 'typing' | 'letters' | 'ai' | 'chat';
 
 interface HeaderProps {
   activeTab: ActiveTab;
@@ -89,6 +89,18 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
 
             <button
+              onClick={() => onTabChange('chat')}
+              className={`flex items-center gap-1.5 px-3 py-2 text-xs sm:text-sm font-medium rounded-md whitespace-nowrap transition-colors ${
+                activeTab === 'chat'
+                  ? 'bg-purple-50 text-purple-900 font-semibold border border-purple-200 shadow-2xs'
+                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+              }`}
+            >
+              <Sparkles className="w-4 h-4 text-purple-600" />
+              <span>شات الذكاء الاصطناعي (Gemini)</span>
+            </button>
+
+            <button
               onClick={() => onTabChange('ai')}
               className={`flex items-center gap-1.5 px-3 py-2 text-xs sm:text-sm font-medium rounded-md whitespace-nowrap transition-colors ${
                 activeTab === 'ai'
@@ -96,8 +108,8 @@ export const Header: React.FC<HeaderProps> = ({
                   : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
               }`}
             >
-              <Sparkles className="w-4 h-4 text-purple-600" />
-              <span>مساعد الذكاء الاصطناعي</span>
+              <Sparkles className="w-4 h-4 text-slate-400" />
+              <span>مولد القوائم الذكي</span>
             </button>
           </nav>
 
@@ -148,12 +160,20 @@ export const Header: React.FC<HeaderProps> = ({
             الحروف
           </button>
           <button
+            onClick={() => onTabChange('chat')}
+            className={`px-3 py-1.5 rounded font-medium whitespace-nowrap ${
+              activeTab === 'chat' ? 'bg-purple-700 text-white' : 'text-slate-600'
+            }`}
+          >
+            شات الذكاء الاصطناعي
+          </button>
+          <button
             onClick={() => onTabChange('ai')}
             className={`px-3 py-1.5 rounded font-medium whitespace-nowrap ${
               activeTab === 'ai' ? 'bg-slate-900 text-white' : 'text-slate-600'
             }`}
           >
-            ذكاء اصطناعي
+            المولد الذكي
           </button>
         </div>
       </div>
